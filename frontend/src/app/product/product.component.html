@@ -1,0 +1,17 @@
+<div class="product-container">
+    <nz-list [nzDataSource]="products" [nzRenderItem]="item" [nzItemLayout]="'vertical'">
+      <ng-template #item let-product>
+        <nz-list-item>
+            <h1>Ramos y Asociados</h1>
+           <img src="../../img/logoSIIV.PNG" alt="" width="120px" height="auto"> 
+          <nz-card nzHoverable [nzTitle]="product.name + ' (v' + product.version + ')'">
+            <p>{{ product.description }}</p>
+            <p>Price: {{ product.price | currency }}</p>
+            <p>Created At: {{ product.createdAt | date:'short' }}</p>
+            <p>Updated At: {{ product.updatedAt | date:'short' }}</p>
+          </nz-card>
+        </nz-list-item>
+      </ng-template>
+    </nz-list>
+  </div>
+  
