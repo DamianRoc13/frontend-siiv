@@ -4,13 +4,11 @@ import { RouterOutlet } from '@angular/router';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
-import { WelcomeComponent } from './pages/welcome/welcome.component';
-import { ProductComponent } from './product/product.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, NzIconModule, NzLayoutModule, NzMenuModule, WelcomeComponent, ProductComponent],
+  imports: [CommonModule, RouterOutlet, NzIconModule, NzLayoutModule, NzMenuModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

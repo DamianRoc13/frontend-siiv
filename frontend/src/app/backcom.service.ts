@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Consumption } from './backcom.model'; 
+import { Version } from './backcom.model'; 
 
 @Injectable({
   providedIn: 'root'
@@ -11,23 +11,20 @@ export class BackcomService {
 
   constructor(private http: HttpClient) {}
 
-  getProductConsumption(): Observable<Consumption[]> {
-    return this.http.get<Consumption[]>(this.apiUrl);
+  getversion(): Observable<Version[]> {
+    return this.http.get<Version[]>(this.apiUrl);
   }
 
-  createProductConsumption(consumption: Consumption): Observable<Consumption> {
-    return this.http.post<Consumption>(this.apiUrl, consumption);
+  createversion(Version: Version): Observable<Version> {
+    return this.http.post<Version>(this.apiUrl, Version);
   }
 
-  updateProductConsumption(id: number, consumption: Consumption): Observable<Consumption> {
-    return this.http.patch<Consumption>(`${this.apiUrl}/${id}`, consumption);
+  updateversion(Version: Version): Observable<Version> {
+    return this.http.patch<Version>(`${this.apiUrl}/${Version.id}`, Version);
   }
 
-  deleteProductConsumption(id: number): Observable<void> {
+  deleteversion(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 
-  getProductConsumptionById(id: number): Observable<Consumption> {
-    return this.http.get<Consumption>(`${this.apiUrl}/${id}`);
-  }
 }

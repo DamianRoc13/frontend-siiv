@@ -1,5 +1,5 @@
-export interface Consumption {
-    id: number;
+export interface Version {
+    id: number | null ;
     name: string;
     version : number;
     price : number ;
